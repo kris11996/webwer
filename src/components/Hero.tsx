@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Truck, Clock, CheckCircle2, ArrowRight, Calculator, Award } from 'lucide-react';
+import heroCraftsmanImg from '../assets/images/hero_craftsman_1792582995311.jpg';
 
 interface HeroProps {
   onOpenRegister: () => void;
@@ -121,7 +122,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onScrollToCalculator
               {/* Main Image Card */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
                 <img
-                  src="/src/assets/images/hero_craftsman_1792582995311.jpg"
+                  src={heroCraftsmanImg || "/images/hero_craftsman.jpg"}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/hero_craftsman.jpg';
+                  }}
                   alt="Montaż długopisów w domu - stanowisko pracy DługopisyJOB"
                   referrerPolicy="no-referrer"
                   className="w-full h-[400px] object-cover group-hover:scale-102 transition-transform duration-500"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Package, Truck, Wrench, Banknote, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import deliveryBoxImg from '../assets/images/delivery_box_1792582997645.jpg';
 
 interface HowItWorksProps {
   onOpenRegister: () => void;
@@ -94,7 +95,10 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenRegister }) => {
             <div className="lg:col-span-6 relative">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
                 <img
-                  src="/src/assets/images/delivery_box_1792582997645.jpg"
+                  src={deliveryBoxImg || "/images/delivery_box.jpg"}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/delivery_box.jpg';
+                  }}
                   alt="Zestaw startowy DługopisyJOB Starter Pack"
                   referrerPolicy="no-referrer"
                   className="w-full h-80 sm:h-96 object-cover group-hover:scale-102 transition-transform duration-500"

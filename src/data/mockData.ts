@@ -88,7 +88,7 @@ export const REVIEWS: ReviewItem[] = [
     author: 'Katarzyna Wiśniewska',
     city: 'Radom',
     age: 34,
-    avatarUrl: '/src/assets/images/happy_worker_1792582997352.jpg',
+    avatarUrl: '/images/happy_worker.jpg',
     pensTotal: 3000,
     totalEarned: 2970.00,
     rating: 5,

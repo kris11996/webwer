@@ -1,6 +1,7 @@
 import React from 'react';
 import { REVIEWS } from '../data/mockData';
 import { Star, CheckCircle, Quote, MapPin } from 'lucide-react';
+import happyWorkerImg from '../assets/images/happy_worker_1792582997352.jpg';
 
 export const WorkerStories: React.FC = () => {
   return (
@@ -27,7 +28,10 @@ export const WorkerStories: React.FC = () => {
             <div className="lg:col-span-5 relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 aspect-square">
                 <img
-                  src="/src/assets/images/happy_worker_1792582997352.jpg"
+                  src={happyWorkerImg || "/images/happy_worker.jpg"}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/happy_worker.jpg';
+                  }}
                   alt="Katarzyna z Radomia - zadowolona współpracownica długopisyJOB"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
